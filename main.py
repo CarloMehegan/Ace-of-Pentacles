@@ -24,7 +24,7 @@ def look_cave():
 
 @when("look around", context="field")
 def look_field():
-  print("You find yourself in a bright, sunny field")
+  print("You find yourself in a bright, field")
 
 set_context('field') # built-in function
 start()
