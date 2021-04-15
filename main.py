@@ -7,7 +7,7 @@ def yell():
 @when("enter the cave", context='field')
 def go_cave():
   set_context('cave')
-  print("You enter the cave")
+  print("You enter the cave 1")
 
 @when("exit the cave", context='cave')
 def exit_cave():
