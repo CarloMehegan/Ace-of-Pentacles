@@ -1,4 +1,7 @@
 from adventurelib import *
+import shop
+
+shop.load()
 
 @when("exclaim")
 def yell():
@@ -26,5 +29,4 @@ def look_cave():
 def look_field():
   print("You find yourself in a bright, field")
 
-set_context('field') # built-in function
 start()
