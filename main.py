@@ -14,9 +14,7 @@ def exit_cave():
   set_context('field')
   print("You exit the cave")
 
-@when("take THING")
-def take(thing):
-  print(f"You take the {thing}.")
+
 
 @when("look around", context="cave")
 def look_cave():
