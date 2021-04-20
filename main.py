@@ -1,4 +1,8 @@
 from adventurelib import *
+from combat import *
+
+#msg to show that file is running
+print("Loading game...")
 
 @when("exclaim")
 def yell():
@@ -27,4 +31,7 @@ def look_field():
   print("You find yourself in a bright, field")
 
 set_context('field') # built-in function
+
+#msg to show that game will run now
+print("Welcome! Type 'help' to see commands.")
 start()
