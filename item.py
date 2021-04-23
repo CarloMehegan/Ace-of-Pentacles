@@ -6,14 +6,18 @@ here.items = Bag([
  Item("apple"),
 ])
 current_room=here
-@when("look around")
-def look():
-  print("In this area there is:")
-  if len(current_room.items)>0:
-    for item in current_room.items:
-      print(f'{item}')
-  else:
-    print("Nothing")
+
+def get_look(description):
+  @when("look around")
+  def look():
+    print(description)
+    print("In this area there is:")
+    if len(current_room.items)>0:
+      for item in current_room.items:
+        print(f'{item}')
+    else:
+      print("Nothing")
+
 @when("take the ITEM")
 @when("take ITEM")
 def take(item):
@@ -23,6 +27,7 @@ def take(item):
   else:
     inv.add(item)
     print(f"You take the {item}.")
+
 @when("inventory")
 def inventory():
   print("Your inventory contains:")
@@ -31,3 +36,5 @@ def inventory():
     return
   for item in inv:
     print (f'{item}')
+
+def create_room(name,description,bag)
