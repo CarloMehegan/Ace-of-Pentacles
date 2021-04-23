@@ -12,10 +12,22 @@ def yell():
   print("You continue falling for about 5 seconds. You stop falling.")
   print("Don't be too loud, you don't know if there's anything near you in the darkness.")
 
+@when("yell", context='light')
+def yl():
+  print("So you like yelling huh? I see.")
+
 @when("take out the lighter", context='dark')
 def lighter():
+  set_context('dark')
+  set_context('lighter')
   print("You take out the lighter from your pocket.")
 
+@when("light the lighter," context='lighter')
+def lit():
+  set_context('light')
+  print("The darkness disappears as you light up your lighter, why don't you look around?")
+
+#The dice game
 @when("pick up the dice")
 def dice():
   set_context('dice')
