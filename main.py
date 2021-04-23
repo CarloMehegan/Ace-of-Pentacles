@@ -1,30 +1,30 @@
 from adventurelib import *
 
-@when("exclaim")
-def yell():
-  print("You bellow at the top of your lungs.")
+print("You're falling into a dark, endless hole. You can't see nor hear anything.")
+print("It feels like a dream, but you cannot wake up. It's getting warmer and warmer, and suddenly, you stops falling.")
+print("You can always type help to see the available command, choose the right things to do and you'll wake up, choose the wrong commands, I'm not sure.")
 
-@when("enter the cave", context='field')
-def go_cave():
-  set_context('cave')
-  print("You enter the cave 2")
-
-@when("exit the cave", context='cave')
-def exit_cave():
-  set_context('field')
-  print("You exit the cave")
-
-@when("take THING")
-def take(thing):
-  print(f"You take the {thing}.")
-
-@when("look around", context="cave")
-def look_cave():
-  print("You find yourself in a dark, damp cave.")
-
-@when("look around", context="field")
-def look_field():
-  print("You find yourself in a bright, sunny field")
-
-set_context('field') # built-in function
+set_context('dark')
 start()
+
+@when("yell", context='dark')
+def yell():
+  print("You continue falling for about 5 seconds. You stop falling.")
+  print("Don't be too loud, you don't know if there's anything near you in the darkness.")
+
+@when("take out the lighter", context='dark')
+def lighter():
+  print("You take out the lighter from your pocket.")
+
+@when("pick up the dice")
+def dice():
+  set_context('dice')
+  print("You picked up the 2 dice. They are glowing in your hands.")
+
+@when("roll the dice", context='dice')
+def roll():
+  number = get_random(2, 12)
+  print("You rolled a {number}")
+  
+
+
