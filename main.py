@@ -1,13 +1,10 @@
 from adventurelib import *
 import shop
+from abstractions import get_look_command
 
-print("What is your name?")
-name = input()
 
-player = Item(name)
-player.hp = 0
-
-shop.load(player)
+get_look_command("hallway", "a dusty hallway")
+get_look_command("room", "A dark room")
 
 @when("exclaim")
 def yell():
