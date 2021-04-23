@@ -16,13 +16,6 @@ def exit_cave():
 
 
 
-@when("look around", context="cave")
-def look_cave():
-  print("You find yourself in a dark, damp cave.")
-
-@when("look around", context="field")
-def look_field():
-  print("You find yourself in a bright, field")
 
 set_context('field')
 start()
