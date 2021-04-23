@@ -1,7 +1,13 @@
 from adventurelib import *
 import shop
 
-shop.load()
+print("What is your name?")
+name = input()
+
+player = Item(name)
+player.hp = 0
+
+shop.load(player)
 
 @when("exclaim")
 def yell():
