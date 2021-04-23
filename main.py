@@ -22,7 +22,7 @@ def lighter():
   set_context('lighter')
   print("You take out the lighter from your pocket.")
 
-@when("light the lighter," context='lighter')
+@when("light the lighter", context='lighter')
 def lit():
   set_context('light')
   print("The darkness disappears as you light up your lighter, why don't you look around?")
@@ -36,7 +36,7 @@ def dice():
 @when("roll the dice", context='dice')
 def roll():
   number = get_random(2, 12)
-  print("You rolled a {number}")
+  print("You rolled a {number}. Submit or pass?")
   
 
 
