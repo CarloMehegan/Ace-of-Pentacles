@@ -1,5 +1,5 @@
 from adventurelib import *
-
+from puzzle import *
 @when("exclaim")
 def yell():
   print("You bellow at the top of your lungs.")
