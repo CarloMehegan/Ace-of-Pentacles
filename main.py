@@ -1,5 +1,8 @@
 from adventurelib import *
 
+import combat
+
+
 @when("exclaim")
 def yell():
   print("You bellow at the top of your lungs.")
