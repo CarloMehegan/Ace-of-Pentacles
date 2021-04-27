@@ -64,7 +64,7 @@ def attack(enemy):
             #check if the equipped item is the enemy's weakness
             w = hand.find(e.weakness)
             if w is not None:
-                say(f"the {enemy} is weak to {e.weakness}. you win!")
+                say(f"the {enemy} is weak to {e.weakness} and runs away!")
                 current_room.enemies.take(enemy)
             else:
                 say(f"the {enemy} resists the attack.")
