@@ -1,5 +1,7 @@
 from adventurelib import *
-from item import *
+from puzzle import * # xander's puzzle system
+from item import * # micah's level system
+
 @when("exclaim")
 def yell():
   print("You bellow at the top of your lungs.")
@@ -14,8 +16,4 @@ def exit_cave():
   set_context('field')
   print("You exit the cave")
 
-
-
-
-set_context('field')
 start()
