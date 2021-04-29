@@ -1,7 +1,6 @@
 from adventurelib import *
-from puzzle import *
-
-set_context("puzzle")
+from puzzle import * # xander's puzzle system
+from item import * # micah's level system
 
 @when("exclaim")
 def yell():
@@ -17,17 +16,4 @@ def exit_cave():
   set_context('field')
   print("You exit the cave")
 
-@when("take THING")
-def take(thing):
-  print(f"You take the {thing}.")
-
-@when("look around", context="cave")
-def look_cave():
-  print("You find yourself in a dark, damp cave.")
-
-@when("look around", context="field")
-def look_field():
-  print("You find yourself in a bright, field")
-
-#set_context('field') # built-in function
 start()

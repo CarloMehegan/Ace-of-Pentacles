@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "repl_python3_beta_Ace-of-Pentacles-1"
+
+name = "repl_python3_Ace-of-Pentacles"
 version = "0.1.0"
 description = ""
-authors = ["XanderMartinez <<>>"]
+authors = ["MicahCessna <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
