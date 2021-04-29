@@ -1,18 +1,13 @@
 from adventurelib import * 
 from random import randint
+number = 0
+life = 2
 
-print("You're falling into a dark, endless hole. You can't see nor hear anything.")
-print("It feels like a dream, but you cannot wake up. It's getting warmer and warmer, and suddenly, you stops falling.")
+print("You're falling into a dark, endless hole. You can't see nor hear anything. It feels like a dream, bt you cannot wake up. It's getting warmer and warmer, and suddenly, your back hits against the floor and you stop falling.")
+print("In this stage, you'll need to explore this dark place and overcome any challenges that come up to you. Once you have defeated all the enemies, they will give you a hint for your last rolling dice game, which provides an important piece of information to solve the final puzzle.")
 print("You can always type help to see the available commands. Choose the right things to do and you'll wake up; choose the wrong commands? I'm not sure.")
 
-@when("yell", context='dark')
-def yell():
-  print("That was not a great thing to do. Don't be too loud when you don't know if there's anything near you in the darkness.")
-
-@when("yell", context='light')
-def yl():
-  print("So you like yelling huh? I see.")
-
+#Explore the place
 @when("take out the lighter", context='dark')
 def lighter():
   set_context('lighter')
@@ -25,7 +20,7 @@ def lit():
 
 @when("look around", context='light')
 def look():
-  print("You are surrounded by Poker cards and dice.")
+  print("You are surrounded by treasure chests. There are # of them.")
 
 #The dice game
 @when("pick up the dice", context='light')
@@ -35,8 +30,30 @@ def dice():
 
 @when("roll the dice", context='dice')
 def roll():
+  global number
   number = randint(2, 12)
   print(f"You rolled a {number}. Submit or pass?")
+  set_context('submit or pass')
+
+@when("submit", context='submit or pass')
+def submit():
+  global number
+  global life
+  if number == 7:
+    print("Correct! On a regular die, add up two opposite sides, and you always get seven. That's why the hint was 'Opposite sides make up perfection.'")
+  else:
+    print(f"Too bad, {number} is not the correct answer. You now have {life} attempts left.")
+    life = life -1
+    set_context('dice') 
+
+if life < 1:
+  print("You have 0 attempt left, game over.")
+
+@when("pass", context='submit or pass')
+def again():
+  print("You passed. That was a safe decision. You can roll the dice again to find the correct answer.")
+  set_context('dice')
+
 
 set_context('dark')
 start()
