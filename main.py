@@ -39,4 +39,5 @@ def exit_cave():
   set_context('field')
   print("You exit the cave")
 
+set_context('field')
 start()

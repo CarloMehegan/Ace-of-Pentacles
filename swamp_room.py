@@ -16,13 +16,13 @@ v2.weakness = "Onion"
 swamp.enemies.add(v1)
 swamp.enemies.add(v2)
 
-#temporary inventory for testing
-inv = Bag()
-inv.add(Item("Garlic"))
-inv.add(Item("Onion"))
+# #temporary inventory for testing
+# inv = Bag()
+# inv.add(Item("Garlic"))
+# inv.add(Item("Onion"))
 
-#temporary inventory
-@when("inv")
-def inv_look():
-    for item in inv:
-        say(f"{item}")
+# #temporary inventory
+# @when("inv")
+# def inv_look():
+#     for item in inv:
+#         say(f"{item}")
