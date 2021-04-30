@@ -22,6 +22,8 @@ def lit():
 def look():
   print("You are surrounded by treasure chests. There are # of them.")
 
+#Combat 
+
 #The dice game
 @when("pick up the dice", context='light')
 def dice():
@@ -45,9 +47,6 @@ def submit():
     print(f"Too bad, {number} is not the correct answer. You now have {life} attempts left.")
     life = life -1
     set_context('dice') 
-
-if life < 1:
-  print("You have 0 attempt left, game over.")
 
 @when("pass", context='submit or pass')
 def again():
