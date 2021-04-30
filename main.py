@@ -2,12 +2,15 @@ from adventurelib import *
 from puzzle import * # xander's puzzle system
 from item import * # micah's level system
 
+#test starter room, temporary
 field = Room("a field")
 field.enemies = Bag()
 f1 = Item("Flower")
 f1.weakness = "Fire"
 field.enemies.add(f1)
 
+#config file stores global variables
+#we need to keep track of what room we are in; advlib wont do it for us
 import config
 config.current_room = field
 
