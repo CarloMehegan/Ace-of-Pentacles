@@ -42,8 +42,8 @@ def load_inventory():
       print (f'{item}')
 
 def create_room(name,description,bag):
-  ##create a room contaiining a bag of items
-  name=Room(description)
-  name.items=Bag([
-    Item()
-  ])
+  ##create a room contaiining a bag of items and return that room
+  r=Room(description)
+  r.items=bag
+  r.name=name
+  return r
