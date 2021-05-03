@@ -42,17 +42,21 @@ def submit():
   global number
   global life
   if number == 7:
-    print("Correct! On a regular die, add up two opposite sides, and you always get seven. That's why the hint was 'Opposite sides make up perfection.'")
+    print("Correct! On a regular die, add up two opposite sides, and you always get 7. That's why the hint was 'Opposite sides make up perfection.'")
   else:
     print(f"Too bad, {number} is not the correct answer. You now have {life} attempts left.")
     life = life -1
-    set_context('dice') 
+    if life < 0:
+      print("Game over. The correct answer is 7. On a regular die, add up two opposite sides, and you always get 7. That's why the hint was 'Opposite sides make up perfection.'")
+      print("Unfortunately, you'll have to continue your journey without the important piece of information to solve the final puzzle from this room. Good luck!")
+      set_context('game over')
+    else:
+      set_context('dice') 
 
 @when("pass", context='submit or pass')
 def again():
   print("You passed. That was a safe decision. You can roll the dice again to find the correct answer.")
   set_context('dice')
-
 
 set_context('dark')
 start()
