@@ -30,14 +30,14 @@ def equip(thing):
 @when("attack ENEMY", context='combat')
 def attack(enemy):
     #look for the ENEMY inputted
-    e = current_room.enemies.find(enemy)
+    e = config.current_room.enemies.find(enemy)
     if e is not None:
         say(f"you attack the {enemy}.")
         #check if the equipped item is the enemy's weakness
         w = hand.find(e.weakness)
         if w is not None:
             say(f"the {enemy} is weak to {e.weakness} and runs away!")
-            current_room.enemies.take(enemy)
+            config.current_room.enemies.take(enemy)
         else:
             say(f"the {enemy} resists the attack.")
     else:
@@ -47,8 +47,8 @@ def attack(enemy):
 def check(enemy):
     say(f"you check the {enemy}.")
     #look for ENEMY inputted, print its weakness
-    e = current_room.enemies.find(enemy)
+    e = config.current_room.enemies.find(enemy)
     if e:
-        say(f"its weakness is {e.weakness}")
+        say(f"its weakness is {e.weakness}!")
     else:
         say(f"there is no {enemy} here.")
