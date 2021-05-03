@@ -10,7 +10,7 @@ def change_context(ctx):
   set_context(ctx) # change context
   print(f"You enter the {ctx}.")
 
-@when("search", context="woods")
+@when("search",  context="woods")
 def search_woods():
   print("You find a stick")
 
