@@ -22,7 +22,7 @@ def lit():
 def look():
   print("You are surrounded by treasure chests. There are # of them.")
 
-#Combat 
+#Combat stuff
 
 #The dice game
 @when("pick up the dice", context='light')
