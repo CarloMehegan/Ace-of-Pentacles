@@ -1,4 +1,31 @@
-from adventurelib import * 
+from adventurelib import *
+from puzzle import * # xander's puzzle system
+from item import * # micah's level system
+
+#test starter room, temporary
+field = Room("a field")
+field.enemies = Bag()
+f1 = Item("Flower")
+f1.weakness = "Fire"
+field.enemies.add(f1)
+
+#config file stores global variables
+#we need to keep track of what room we are in; advlib wont do it for us
+import config
+config.current_room = field
+
+#carlo's imports
+import swamp_room
+import combat
+
+#swamp is the test room for combat.py
+@when("enter the swamp", context='field')
+def go_swamp():
+  set_context('combat')
+  config.current_room = swamp_room.swamp
+  print("You enter the swamp.")
+
+#An's imports
 from random import randint
 number = 0
 life = 2
@@ -17,6 +44,7 @@ def lighter():
 def lit():
   set_context('light')
   print("The darkness disappears as you light up your lighter, why don't you look around?")
+
 
 @when("look around", context='light')
 def look():
@@ -59,6 +87,7 @@ def again():
   set_context('dice')
 
 set_context('dark')
+
 start()
   
 

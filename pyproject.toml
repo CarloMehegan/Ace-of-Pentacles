@@ -1,11 +1,21 @@
 [tool.poetry]
-name = "ace-of-pentacles"
+name = "repl_python3_beta_Ace-of-Pentacles"
 version = "0.1.0"
 description = ""
-authors = ["TuongAnAn <<>>"]
+authors = ["CarloMehegan <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+cython = "^0.29.23"
+python-ntlm = "^1.1.0"
+brotli = "^1.0.9"
+keyring = "^23.0.1"
+htmlparser = "^0.0.2"
+cryptography = "^3.4.7"
+ordereddict = "^1.1"
+ipaddr = "^2.2.0"
+lxml = "^4.6.3"
+wincertstore = "^0.2"
 adventurelib = "^1.2.1"
 
 [tool.poetry.dev-dependencies]
