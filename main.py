@@ -1,6 +1,9 @@
 from adventurelib import *
 import shop
 from abstractions import get_look_command
+from example_pack.module import run_module
+
+run_module()
 
 
 get_look_command("hallway", "a dusty hallway")
