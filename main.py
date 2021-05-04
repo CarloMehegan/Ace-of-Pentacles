@@ -45,15 +45,20 @@ def lit():
   set_context('light')
   print("The darkness disappears as you light up your lighter, why don't you look around?")
 
-
 @when("look around", context='light')
 def look():
-  print("You are surrounded by treasure chests. There are # of them.")
+  print("You're in the middle of nowhere. In front of you is a swamp.")
 
-#Combat stuff
+@when("enter the swamp", context='light')
+def go_swamp():
+  set_context('combat')
+  config.current_room = swamp_room.swamp
+  print("You enter the swamp.")
+
+#after you have defeated all the enemies and go back on land (context land), you'll play the dice game
 
 #The dice game
-@when("pick up the dice", context='light')
+@when("pick up the dice", context='land')
 def dice():
   set_context('dice')
   print("You picked up the 2 dice. They are glowing in your hands.")
