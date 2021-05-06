@@ -3,3 +3,4 @@ env
 *.toml
 *.lock
 
+__pycache__/room1.cpython-39.pyc
