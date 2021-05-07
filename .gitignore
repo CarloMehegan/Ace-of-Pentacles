@@ -1,6 +1,8 @@
+__pycache__
+__pycache__/*
+*.pyc
 env\*
 env
 *.toml
 *.lock
 
-__pycache__/room1.cpython-39.pyc
