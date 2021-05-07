@@ -1,6 +1,7 @@
 from adventurelib import *
 from puzzle import * # xander's puzzle system
 from item import * # micah's level system
+from room1 import * #An's room1
 
 #test starter room, temporary
 field = Room("a field")
@@ -14,6 +15,7 @@ field.enemies.add(f1)
 import config
 config.current_room = field
 
+#carlo's imports
 import swamp_room
 import combat
 
@@ -23,5 +25,7 @@ def go_swamp():
   set_context('combat')
   config.current_room = swamp_room.swamp
   print("You enter the swamp.")
+
+set_context('dark')
 
 start()
