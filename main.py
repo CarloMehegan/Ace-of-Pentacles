@@ -29,6 +29,3 @@ def go_swamp():
 set_context('dark')
 
 start()
-  
-
-
