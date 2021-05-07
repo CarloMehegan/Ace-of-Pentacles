@@ -6,7 +6,7 @@ life = 2
 
 print("You're falling into a dark, endless hole. You can't see nor hear anything. It feels like a dream, bt you cannot wake up. It's getting warmer and warmer, and suddenly, your back hits against the floor and you stop falling.")
 print("In this stage, you'll need to explore this dark place and overcome any challenges that come up to you. Once you have defeated all the enemies, they will give you a hint for your last rolling dice game, which provides an important piece of information to solve the final puzzle.")
-print("You can always type help to see the available commands. Choose the right things to do and you'll wake up; choose the wrong commands? I'm not sure.")
+print("You can always type help to see the available commands. Choose the right things to do and you'll wake up.")
 
 #Explore the place
 @when("take out the lighter", context='dark')
